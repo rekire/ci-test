@@ -17,4 +17,4 @@ cache:
     - $HOME/runtime-js/.gradle/nodejs
 
 jdk:
-    - oraclejdk8
+    - openjdk8
