@@ -17,4 +17,13 @@ cache:
     - $HOME/runtime-js/.gradle/nodejs
 
 jdk:
-    - openjdk8
+- openjdk8
+
+deploy:
+  provider: releases
+  api_key:
+    secure: KBbm9zefdZbF1Q8b8Bn8tpjdqGeAO39qv8olu6UhXy/oiX272u4RQdv74Ebs4/HMHA8+5xP2Ys4D1XjMvduBcvss29YivxkZkuylcU2VOnW0UwECHDylsBgK/4EQiiwri6b2UHAlCfM566jhjal4OHkuCdWuDMXkiq00T72dznpIp69VRVpl4VTqNBIt2DOmhyX2tUjN0mLqRUqmhkDh0oSV/DPwtfO73BmJ/AW52AZ2gJrjtUuSSVgpUsRtD30r0oJN3TdzM4m0Boaz6FsNFOz9XteGrmyJMEutslfUFTSwgCyrj0lEQUh19Lgpvzyn/Yx2hO0wC6k8xBuhe+CWZb1U56gnFEYiL5NDmP0F8U/kgPXMaRITuYX+06rohFwRp0svZvZI3KBZJ8k/AH8q3Rd6kprQZSgQ2h0ASYwCoojj1KshU8NRNJJyKnQugy8C27aUOb+qUQY2eqBDmNEikVQSSm6OPuJpNBqRsx5QL0V2k5212SExkAoVMA2vJ4ca1NIqE/+du05jhcviJxhv4I0IA11FUp/+QBsOcJpMeFBLk57KZIqmpOWif5nkwrkTp1wvCEBEggHzfma+CIDwWHnYyWLvrhxInSoTKlkyhWNNcxPYMrt0y4s69VyOrLOsuHsYPw2QfEoUn86pbVaj/ycfhVei8amY510vlOhUdmA=
+  file: build/libs/test.jar
+  on:
+    repo: rekire/ci-test
+    tags: true
