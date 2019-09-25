@@ -13,7 +13,7 @@ if [[ $1 == "prepair" ]]; then
   sed -i -e "s/^version '[^']+'$/version '$VERSION'/g" build.gradle
   git add build.gradle
   mkdir -p publish
-  cp build/*.jar publish
+  cp build/libs/*.jar publish
 fi
 if [[ $1 == "finish" ]]; then
   echo Updating readme...
