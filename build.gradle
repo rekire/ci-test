@@ -15,7 +15,6 @@ dependencies {
 }
 
 jar.manifest.attributes('Main-Class': 'eu.rekisoft.ci.test.MainKt')
-jar.archiveName = 'test.jar'
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
