@@ -1,4 +1,4 @@
-# CI Test [![Build Status][travis-image]][travis-url] [![CLI 1.0.0][cli-ver-img]][cli-dl-url]
+# CI Test [![Build Status][travis-image]][travis-url] [![Latest CLI version is 1.0.0][cli-ver-img]][cli-dl-url]
 
 This is just a test how to manage releases with travis and tags.
 
