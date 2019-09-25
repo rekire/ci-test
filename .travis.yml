@@ -4,6 +4,7 @@ notifications:
   email: false
 
 script:
+  - ./release.sh prepair
   - ./gradlew test build
 
 before_cache:
@@ -18,9 +19,6 @@ cache:
 
 jdk:
 - openjdk8
-
-before_deploy:
-  - ./release.sh prepair
 
 deploy:
   provider: releases
