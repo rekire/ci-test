@@ -23,6 +23,7 @@ if [[ $1 == "finish" ]]; then
   git config --local user.name "rekire"
   # Hide the mail address from spam bots
   git config --local user.email "`echo "Z2l0QHJla2kucmU=" | base64 -d`"
+  git add readme.md
   git commit -m "Update readme for the release $VERSION"
   git push
 fi
