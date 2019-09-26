@@ -9,9 +9,11 @@ MODULE=`echo $TAG|cut -d- -f 1`
 VERSION=`echo $TAG|cut -d- -f 2-`
 
 echo $1ing release $VERSION
-if [[ $1 == "prepair" ]]; then
+if [[ $1 == "update" ]]; then
   sed -i -e "s/^version '[^']+'$/version '$VERSION'/g" build.gradle
   git add build.gradle
+fi
+if [[ $1 == "prepair" ]]; then
   mkdir -p publish
   cp build/libs/*.jar publish
 fi
