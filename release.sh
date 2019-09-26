@@ -26,7 +26,7 @@ if [[ $1 == "finish" ]]; then
   # Hide the mail address from spam bots
   git config --local user.email "`echo "Z2l0QHJla2kucmU=" | base64 -d`"
   git add readme.md
-  git remote set-url origin https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git
+  git remote set-url origin https://${GH_TOKEN}@github.com/rekire/ci-test.git
   git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
   git fetch
   git checkout master
