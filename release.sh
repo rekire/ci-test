@@ -38,6 +38,6 @@ if [[ $1 == "finish" ]]; then
   git checkout master
   git commit -m "Update version number to $VERSION"
   git push
-  git tag -fa $TAG
+  git tag -fa $TAG -m "Move tag for updated readme"
   git push origin master --tags
 fi
