@@ -11,8 +11,6 @@ VERSION=`echo $TAG|cut -d- -f 2-`
 echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
   sed -i -E "s/^version '[^']+'$/version '$VERSION'/g" build.gradle
-  echo "Debug:"
-  grep version build.gradle
   git add build.gradle
 fi
 if [[ $1 == "prepair" ]]; then
@@ -28,11 +26,10 @@ if [[ $1 == "finish" ]]; then
   # Hide the mail address from spam bots
   git config --local user.email "`echo "Z2l0QHJla2kucmU=" | base64 -d`"
   git add readme.md
+  git remote set-url origin https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git
   git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
   git fetch
   git checkout master
   git commit -m "Update readme for the release $VERSION"
   git push
-  echo "Debug:"
-  cat readme.md
 fi
