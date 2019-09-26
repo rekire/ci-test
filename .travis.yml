@@ -3,7 +3,7 @@ language: java
 notifications:
   email: false
 
-script_before:
+before_install:
   - ./release.sh prepair
 
 script:
