@@ -4,6 +4,7 @@ notifications:
   email: false
 
 before_install:
+  - openssl aes-256-cbc -K $encrypted_dbe2ab23e995_key -iv $encrypted_dbe2ab23e995_iv -in travis_rsa.enc -out travis_rsa -d
   - ./release.sh update
 
 script:
