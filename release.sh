@@ -10,7 +10,9 @@ VERSION=`echo $TAG|cut -d- -f 2-`
 
 echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
-  sed -i -e "s/^version '[^']+'$/version '$VERSION'/g" build.gradle
+  sed -i -E "s/^version '[^']+'$/version '$VERSION'/g" build.gradle
+  echo "Debug:"
+  grep version build.gradle
   git add build.gradle
 fi
 if [[ $1 == "prepair" ]]; then
@@ -29,4 +31,6 @@ if [[ $1 == "finish" ]]; then
   git checkout origin/master
   git commit -m "Update readme for the release $VERSION"
   git push
+  echo "Debug:"
+  cat readme.md
 fi
