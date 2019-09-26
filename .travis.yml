@@ -3,8 +3,10 @@ language: java
 notifications:
   email: false
 
-script:
+script_before:
   - ./release.sh prepair
+
+script:
   - ./gradlew test build
 
 before_cache:
