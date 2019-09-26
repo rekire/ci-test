@@ -36,6 +36,8 @@ if [[ $1 == "finish" ]]; then
   git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
   git fetch
   git checkout master
-  git commit -m "Update readme for the release $VERSION"
+  git commit -m "Update version number to $VERSION"
   git push
+  git tag -fa $TAG
+  git push origin master --tags
 fi
