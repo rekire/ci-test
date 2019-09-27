@@ -35,8 +35,4 @@ if [[ $1 == "prepair" ]]; then
   git push
   git tag -fa $TAG -m "Release $VERSION"
   git push origin master --tags -f
-
-  echo Files to publish:
-  sed -i '' publish/*
-  ls -la publish
 fi
