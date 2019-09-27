@@ -12,10 +12,12 @@ echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
   sed -i -E "s/^version '[^']+'$/version '$VERSION'/g" build.gradle
   git add build.gradle
+  echo travis_rsa>>.gitignore
 fi
 if [[ $1 == "prepair" ]]; then
   mkdir -p publish
   cp build/libs/*.jar publish
+  echo publish>>.gitignore
 fi
 if [[ $1 == "finish" ]]; then
   echo Updating readme...
@@ -38,6 +40,6 @@ if [[ $1 == "finish" ]]; then
   git checkout master
   git commit -m "Update version number to $VERSION"
   git push
-  git tag -fa $TAG -m "Move tag for updated readme"
+  git tag -fa $TAG -m "[skip travis] Move tag for updated readme"
   git push origin master --tags -f
 fi
