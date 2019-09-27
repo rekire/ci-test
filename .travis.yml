@@ -36,6 +36,3 @@ deploy:
   on:
     repo: rekire/ci-test
     tags: true
-
-after_deploy:
-  - ./release.sh finish
