@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'eu.rekisoft.ci'
-version '1.0.20-5-gcd0888a'
+version '1.0.22'
 
 repositories {
     mavenCentral()
