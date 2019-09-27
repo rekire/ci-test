@@ -12,6 +12,16 @@ echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
   mkdir -p publish
   ./release-$MODULE.sh
+  wget https://github.com/chocolatey/choco/archive/stable.zip
+  unzip stable.zip
+  rm stable.zip
+  apt-get install mono
+  cd choco-stable
+  chmod +x build.sh
+  chmod +x zip.sh
+  ./build.sh
+  ls -l build_output/chocolatey
+  build_output/chocolatey/choco -v
 fi
 
 if [[ $1 == "prepair" ]]; then
