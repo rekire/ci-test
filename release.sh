@@ -10,7 +10,7 @@ VERSION=`echo $TAG|cut -d- -f 2-`
 
 echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
-  eval `./release-$MODULE.sh`
+  ./release-$MODULE.sh
 
   echo Committing changes...
   # prepare the key
