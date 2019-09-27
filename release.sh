@@ -22,8 +22,8 @@ if [[ $1 == "update" ]]; then
   echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
   sudo apt update
   sudo apt-get -y install mono
-  ls -l stable
-  cd stable
+  ls -l choco-stable
+  cd choco-stable
   chmod +x build.sh
   chmod +x zip.sh
   ./build.sh
