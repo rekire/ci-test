@@ -27,11 +27,13 @@ if [[ $1 == "update" ]]; then
   git checkout master
   git commit -m "[skip ci] Update version number to $VERSION"
   git push
-  git tag -fa $TAG -m "Move tag for updated readme"
-  git push origin master --tags -f
+  git tag -fa $TAG -m "Release $VERSION"
 fi
 if [[ $1 == "prepair" ]]; then
   echo travis_rsa>>.gitignore
   mkdir -p publish
   echo publish>>.gitignore
+fi
+if [[ $1 == "finish" ]]; then
+  git push origin master --tags -f
 fi
