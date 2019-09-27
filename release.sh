@@ -24,10 +24,6 @@ if [[ $1 == "update" ]]; then
   git remote set-url origin git@github.com:rekire/ci-test.git
   git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
   git fetch
-  git checkout master
-  git commit -m "[skip ci] Update version number to $VERSION"
-  git push
-  git tag -fa $TAG -m "Release $VERSION"
 fi
 if [[ $1 == "prepair" ]]; then
   echo travis_rsa>>.gitignore
@@ -35,5 +31,9 @@ if [[ $1 == "prepair" ]]; then
   echo publish>>.gitignore
 fi
 if [[ $1 == "finish" ]]; then
+  git checkout master
+  git commit -m "[skip ci] Update version number to $VERSION"
+  git push
+  git tag -fa $TAG -m "Release $VERSION"
   git push origin master --tags -f
 fi
