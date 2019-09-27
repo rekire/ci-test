@@ -21,7 +21,7 @@ if [[ $1 == "update" ]]; then
   sudo apt install apt-transport-https ca-certificates
   echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
   sudo apt update
-  sudo apt-get -y install mono
+  sudo apt-get -y install mono-devel
   ls -l choco-stable
   cd choco-stable
   chmod +x build.sh
