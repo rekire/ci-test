@@ -1,4 +1,4 @@
-# CI Test [![Build Status][travis-image]][travis-url] [![Latest CLI version is 1.0.18][cli-ver-img]][cli-dl-url]
+# CI Test [![Build Status][travis-image]][travis-url] [![Latest CLI version is 1.0.20-2-gb5fc92a][cli-ver-img]][cli-dl-url]
 
 This is just a test how to manage releases with travis and tags.
 
@@ -30,5 +30,5 @@ In the [`release.sh`](./release.sh) file I update the version numbers and move t
 [travis-image]: https://travis-ci.com/rekire/ci-test.svg?branch=master
 [travis-url]: https://travis-ci.com/rekire/ci-test
 [install-travis]: https://github.com/travis-ci/travis.rb#installation
-[cli-ver-img]: https://img.shields.io/badge/cli-1.0.18-blue "Latest CLI version is 1.0.18"
+[cli-ver-img]: https://img.shields.io/badge/cli-1.0.20-2-gb5fc92a-blue "Latest CLI version is 1.0.20-2-gb5fc92a"
 [cli-dl-url]: https://www.example.com
