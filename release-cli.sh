@@ -13,4 +13,4 @@ git add readme.md
 
 echo Prepairing artifacts...
 # Add link to the not yet created artifact
-ln -s build/libs/test-$VERSION.jar publish/test-$VERSION.jar
+ln -s ../build/libs/test-$VERSION.jar publish/cli-$VERSION.jar
