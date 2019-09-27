@@ -13,9 +13,9 @@ if [[ $1 == "update" ]]; then
   mkdir -p publish
   ./release-$MODULE.sh
   wget https://github.com/chocolatey/choco/archive/stable.zip
-  unzip stable.zip
+  unzip stable.zip > /dev/nul
   rm stable.zip
-  apt-get install mono
+  sudo apt-get -y install mono
   cd choco-stable
   chmod +x build.sh
   chmod +x zip.sh
