@@ -10,6 +10,7 @@ VERSION=`echo $TAG|cut -d- -f 2-`
 
 echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
+  mkdir -p publish
   ./release-$MODULE.sh
 
   echo Committing changes...
@@ -27,7 +28,6 @@ if [[ $1 == "update" ]]; then
 fi
 if [[ $1 == "prepair" ]]; then
   echo travis_rsa>>.gitignore
-  mkdir -p publish
   echo publish>>.gitignore
 fi
 if [[ $1 == "finish" ]]; then
