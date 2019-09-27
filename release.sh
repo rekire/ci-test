@@ -12,23 +12,7 @@ echo $1ing release $VERSION
 if [[ $1 == "update" ]]; then
   mkdir -p publish
   ./release-$MODULE.sh
-  if [[ ! -f stable.zip ]]; then
-    wget https://github.com/chocolatey/choco/archive/stable.zip
-    unzip stable.zip
-    #rm stable.zip
-  fi
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-  sudo apt install apt-transport-https ca-certificates
-  echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-  sudo apt update
-  sudo apt-get -y install mono-complete
-  ls -l choco-stable
-  cd choco-stable
-  chmod +x build.sh
-  chmod +x zip.sh
-  ./build.sh
-  ls -l build_output/chocolatey
-  build_output/chocolatey/choco -v
+  docker run --rm -v $PWD:$PWD -w $PWD linuturk/mono-choco --allow-unofficial -h
 fi
 
 if [[ $1 == "prepair" ]]; then
