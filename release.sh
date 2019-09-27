@@ -36,7 +36,7 @@ if [[ $1 == "prepair" ]]; then
   git tag -fa $TAG -m "Release $VERSION"
   git push origin master --tags -f
 
-  export TARGET_COMMITISH=`git rev-parse HEAD`
   echo Files to publish:
+  sed -i '' publish/*
   ls -la publish
 fi

@@ -25,6 +25,7 @@ jdk:
 
 before_deploy:
   - ./release.sh prepair
+  - export TARGET_COMMITISH=`git rev-parse HEAD`
 
 deploy:
   provider: releases
